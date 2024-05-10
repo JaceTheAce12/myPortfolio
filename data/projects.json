@@ -1,0 +1,66 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Personal Website",
+      "description": "A personal website to showcase my work and skills.",
+      "link": "http://example.com"
+    },
+    {
+      "id": "2",
+      "title": "Weather App",
+      "description": "A simple app to display weather information using an API.",
+      "link": "http://weatherapp.com"
+    },
+    {
+      "id": "3",
+      "title": "Task Manager",
+      "description": "A project management tool that helps users track their daily tasks.",
+      "link": "http://taskmanager.com"
+    },
+    {
+      "id": "4",
+      "title": "E-commerce Site",
+      "description": "An online store for electronics that includes product listings, a shopping cart, and checkout functionality.",
+      "link": "http://electronicsstore.com"
+    },
+    {
+      "id": "5",
+      "title": "Recipe Blog",
+      "description": "A blog where users can post and share their favorite recipes with others.",
+      "link": "http://recipeblog.com"
+    },
+    {
+      "id": "6",
+      "title": "Photo Gallery",
+      "description": "A web application to display a collection of high-quality images in an aesthetically pleasing layout.",
+      "link": "http://photogallery.com"
+    },
+    {
+      "id": "7",
+      "title": "Fitness Tracker",
+      "description": "An application that allows users to track their exercise routines and monitor their progress over time.",
+      "link": "http://fitnesstracker.com"
+    },
+    {
+      "id": "8",
+      "title": "Online Forum",
+      "description": "A forum site where users can hold discussions in the form of posted messages.",
+      "link": "http://onlineforum.com"
+    },
+    {
+      "id": "9",
+      "title": "Booking System",
+      "description": "A system for booking appointments and managing schedules for a small business.",
+      "link": "http://bookingsystem.com"
+    },
+    {
+      "id": "10",
+      "title": "Quiz App",
+      "description": "An interactive web application for creating and taking quizzes on various topics.",
+      "link": "http://quizapp.com"
+    }
+  ]
+}
+
+  

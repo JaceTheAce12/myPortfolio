@@ -1,0 +1,296 @@
+$backgroundColor: rgb(23, 23, 23);
+$cardColor: #161616;
+$purpleAccent: #A352E9;
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    background-image: url('../assets/backgroundImage.svg');
+    background-size: cover;  
+    background-repeat: no-repeat;  
+    background-position: center; 
+    background-attachment: fixed;
+    font-family: "Poppins", sans-serif;
+    height: 100%;
+  }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    color: white;
+    max-width: 1600px;
+    margin: auto;
+    .logo {
+        width: 100px;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    margin: auto;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.introSection {
+    padding: 1rem;
+    margin: auto;
+    h1 {
+        color: white;
+        font-size: 3rem;
+    }
+    h3 {
+        color: $purpleAccent;
+        padding: 1rem 0;
+    }
+}
+
+.projectSection {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    .project {
+        width: 100%; // Ensures full width on smaller devices
+        margin: 0.5rem 0; // Reduces margin for tighter spacing on small screens
+        padding: 1rem; // Consistent padding
+        background-color: $cardColor;
+        border-radius: 10px;
+        color: white;
+        box-sizing: border-box; // Ensures padding does not add to the width
+        h3 {
+            background-color: transparent;
+            padding-bottom: .3rem;
+        }
+        p {
+            background-color: transparent;
+        }
+        .projectLink {
+            text-decoration: none;
+            color: white;
+            background-color: darken($cardColor, 20%);
+            padding: .6rem 1rem;
+            border-radius: 10px;
+        }
+    }
+    .project:hover {
+        cursor: pointer;
+        background-color: lighten($cardColor, 10%);
+    }
+}
+
+.introSection {
+    background-color: $cardColor;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px;
+    margin: 2rem;
+    position: sticky;
+    top: 100px;
+    z-index: 2
+}
+
+.introCard {
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    
+    img {
+        width: 100%;
+        border-radius: 15px;
+        position: relative;
+        bottom: 125px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    img:hover {
+        cursor: pointer;
+    }
+        
+    }
+    #socialLinks {
+        width: 100%;
+        ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            li {
+                list-style: none;
+                padding: 1rem;
+                a {
+                    display: block;
+                    text-decoration: none;
+                    .fa-brands {
+                        color: white;
+                    }
+                }
+                a:hover {
+                    cursor: pointer;
+                    .fa-brands {
+                        color:$purpleAccent;
+                    }
+    
+                }
+            }
+        }
+    }
+
+
+.skillsContainer {
+    background-color: $cardColor;
+    padding: 2rem;
+    border-radius: 15px;
+    .skillsHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            color: white;
+            margin-right: 1rem;
+        }
+        hr {
+            width: 500px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+  @keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+  }
+
+  @keyframes glowing {
+    0% { box-shadow: 0 0 10px #fff;}
+    50% { box-shadow: 0 0 20px $purpleAccent, 0 0 30px lighten($purpleAccent, 20%); }
+    100% { box-shadow: 0 0 10px #fff; }
+  }
+
+.skillsHeader {
+    text-align: left;
+    h1 {
+        color: white;
+    }
+}
+
+.skillsSection {
+    overflow: hidden;
+    padding: 2rem 0;
+    white-space: nowrap;
+    text-align: left;
+    max-width: 800px;
+    position: relative;
+    .svg-slider {
+        display: inline-block;
+        animation: 30s slide infinite linear;
+        padding: 2rem 0;
+        img {
+            height: 75px;
+            margin: 0 3rem;
+        }
+        img:hover {
+            animation: glowing 1.5s infinite alternate;
+        }
+      }
+}
+
+.skillsSection:hover {
+    .svg-slider {
+        cursor: pointer;
+    }
+}
+
+.skillsSection:before,.skillsSection:after {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to left, transparent, rgb(14, 14, 14));
+    content: "";
+    z-index: 2;
+}
+
+.skillsSection:before {
+    left: 0;
+    background: linear-gradient(to left, transparent, transparent);
+}
+
+.skillsSection:after {
+    right: 0;
+    background: linear-gradient(to right, transparent, transparent);
+}
+
+.aboutSection {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 2rem;
+    color: white;
+    #aboutImg {
+        img {
+            width: 100%;
+            max-width: 500px;
+            padding: 1rem;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $cardColor;
+    justify-content: center;
+    align-items: center;
+    padding: .4rem;
+    margin: 2rem;
+    border-radius: 15px;
+    position: sticky;
+    top: 10px;
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+            a {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                text-decoration: none;
+                padding: 1rem;
+                background-color: black;
+                margin: .6rem;
+                border-radius: 15px;
+                color: white;
+                font-size: 1rem;
+                i {
+                    color: white;
+                    padding-bottom: .2rem;
+                }
+            }
+            a:hover {
+                background-color: $purpleAccent;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+  
+
+
