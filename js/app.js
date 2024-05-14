@@ -77,17 +77,135 @@ console.log(user1.getPosts()); // Output basic info about posts
 console.log(user1.getComments(0)); // Output comments for the first post
 
 
+class Vehicle {
+    constructor(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    displayInfo() {
+        return `Make: ${this.make}, Model: ${this.model}, Year: ${this.year}`
+    }
+}
+
+class VehicleRegistry {
+    constructor() {
+        this.vehicles = []
+    }
+
+    addVehicle(vehicle) {
+        this.vehicles.push(vehicle);
+    }
+
+    removeVehicle(model) {
+        const index = this.vehicles.findIndex(vehicle => vehicle.model === model);
+        if (index !== -1) {
+            this.vehicles.splice(index, 1)
+        }
+    }
+
+    listVehicles() {
+        return this.vehicles.map(vehicle => vehicle.displayInfo()).join('\n');
+    }
+}
+
+const registry = new VehicleRegistry();
+registry.addVehicle(new Vehicle("Toyota", "Corolla", 2020));
+registry.addVehicle(new Vehicle("Ford", "Mustang", 1968));
+registry.addVehicle(new Vehicle("Honda", "Civic", 2019));
+
+console.log("Vehicles in registry:");
+console.log(registry.listVehicles());
+
+registry.removeVehicle("Mustang");
+
+console.log("Vehicles in registry after removal:");
+console.log(registry.listVehicles());
+
+
+
 class Book {
     constructor(title, author) {
         this.title = title;
         this.author = author;
+        this.isCheckedOut = false
+    } 
+}
+
+
+class TodoItem {
+    constructor(content) {
+        this.id = Date.now();
+        this.content = content;
+        this.completed = false;
     }
 
-    displayInfo() {
-        return `Title: ${this.title}, Author: ${this.author}`;
+    toggleComplete() {
+        this.completed = !this.completed;
     }
 }
 
-const book = new Book("Harry Potter and the half blood Prince", "J.K. Rowling");
+class TodoList {
+    constructor() {
+        this.items = [];
+    }
 
-console.log(book.displayInfo());
+    addItem(content) {
+        const newItem = new TodoItem(content);
+        this.items.push(newItem);
+        this.render();
+    }
+
+    removeItem(id) {
+        this.items = this.items.filter(item => item.id !== id);
+        this.render();
+    }
+
+    toggleItemCompletion(id) {
+        const item = this.items.find(item => item.id === id);
+        if (item) {
+            item.toggleComplete();
+        }
+        this.render();
+    } 
+
+    render() {
+        const displayList = document.querySelector('.displayList');
+        displayList.innerHTML = '';
+        this.items.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = item.content;
+            if (item.completed) {
+                listItem.style.textDecoration = 'line-through';
+            }
+
+            const toggleBtn = document.createElement('button');
+            toggleBtn.textContent = 'Toggle';
+            toggleBtn.onclick = () => this.toggleItemCompletion(item.id);
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Remove';
+            removeBtn.onclick = () => this.removeItem(item.id);
+
+            displayList.appendChild(toggleBtn);
+            displayList.appendChild(removeBtn);
+            displayList.appendChild(listItem);
+        })
+    }
+}
+
+const addBtn = document.querySelector('#addBtn');
+
+addBtn.addEventListener('click', () => {
+    const enterTodo = document.querySelector('#enterTodo');
+    const content = enterTodo.value.trim();
+
+    if (content) {
+        todoList.addItem(content);
+        enterTodo.value = '';
+    }
+})
+
+const todoList = new TodoList();
+
