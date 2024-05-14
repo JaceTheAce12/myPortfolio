@@ -37,11 +37,15 @@ header {
                 display: flex;
                 li {
                     list-style: none;
-                    margin: 0 2rem;
+                    margin: 0 1.5rem;
                     a {
                         display: block;
                         text-decoration: none;
                         color: white;
+                        font-weight: 500;
+                    }
+                    a:hover {
+                        color: $purpleAccent;
                     }
                 }
             }
@@ -102,6 +106,37 @@ main {
     margin-top: 3rem;
 }
 
+.projectSection {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: 100%;
+    .project {
+        max-width: 580px;
+        margin: 1rem .6rem;
+        img {
+            width: 100%;
+            margin: 0;
+            border-radius: 8px 8px 0 0;
+            padding: 0;
+        }
+        div {
+            background-color: #292524;
+            margin: 0;
+            padding: 24px;
+            border-radius: 0 0 8px 8px;
+            h3 {
+                font-size: 32px;
+            }
+            p {
+                color: #A8A29E;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
 .skillsContainer {
     padding: 2rem;
     border-radius: 15px;
@@ -112,6 +147,7 @@ main {
         h1 {
             color: white;
             margin-right: 1rem;
+            font-size: 48px;
         }
         hr {
             width: 500px;
@@ -188,6 +224,15 @@ main {
 .skillsSection:after {
     right: 0;
     background: linear-gradient(to right, transparent, transparent);
+}
+
+footer {
+    background-image: url('../assets/footer-background.svg'); 
+        background-size: cover;
+        background-repeat: no-repeat;  
+        background-position: center; 
+        height: 1004px;
+        margin: 0;
 }
 
   
