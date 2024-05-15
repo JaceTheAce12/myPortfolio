@@ -25,7 +25,7 @@ const createProjectElement = (project) => {
     const projectDiv = document.createElement('div');
     projectDiv.className = 'project';
     projectDiv.innerHTML = `
-        <img src="${project.img}" alt="${project.title} loading="lazy">
+        <img src="${project.img}" alt="${project.title}" loading="lazy">
         <div>
             <h3>${project.title}</h3>
             <p>${project.description}</p>

@@ -9,8 +9,36 @@ body {
   background-color: #0C0A09;
 }
 
+.loader {
+  transition: 0.3s cubic-bezier(1, 0.01, 0.29, 1.01);
+  background-color: #fa8072;
+  left: 0;
+  right: 100%;
+  position: absolute;
+  height: 100vh;
+  z-index: 101;
+}
+
+.loader i {
+  position: fixed;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  top: 50%;
+  color: #fff;
+}
+
+.loading:after {
+  background-color: #fff;
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
 header {
-  background-image: url("../assets/header-bg.svg");
+  background-image: linear-gradient(to bottom, transparent, #0C0A09), url("../assets/header-bg.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -88,15 +116,67 @@ header .lowerContainer a {
 header .lowerContainer a:hover {
   background-color: #7a73eb;
 }
+header .aboutTitle {
+  text-align: center;
+  padding: 80px 0;
+}
+header .aboutTitle h1 {
+  font-size: 48px;
+}
+header .aboutInfo {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
+header .aboutInfo img {
+  width: 576px;
+  border-radius: 100%;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+header .aboutText h1, header .aboutText p, header .aboutText button {
+  margin: 1rem 0;
+}
+header .aboutText h1 {
+  line-height: 57px;
+  font-size: 48px;
+}
 
 main {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   max-width: 1600px;
   margin: auto;
   align-items: center;
   margin-top: 3rem;
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1400px;
+}
+.projectHeader h1 {
+  color: white;
+  font-size: 48px;
+  text-align: left;
 }
 
 .projectSection {
@@ -109,6 +189,8 @@ main {
 .projectSection .project {
   max-width: 580px;
   margin: 1rem 0.6rem;
+  background-color: #292524;
+  border-radius: 0 0 8px 8px;
 }
 .projectSection .project img {
   width: 100%;
@@ -132,7 +214,7 @@ main {
 
 .skillsContainer {
   padding: 2rem;
-  border-radius: 15px;
+  margin: auto;
 }
 .skillsContainer .skillsHeader {
   display: flex;
@@ -143,11 +225,6 @@ main {
   color: white;
   margin-right: 1rem;
   font-size: 48px;
-}
-.skillsContainer .skillsHeader hr {
-  width: 500px;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 @keyframes slide {
@@ -181,7 +258,7 @@ main {
   padding: 2rem 0;
   white-space: nowrap;
   text-align: left;
-  max-width: 800px;
+  max-width: 1200px;
   position: relative;
 }
 .skillsSection .svg-slider {
@@ -190,7 +267,7 @@ main {
   padding: 2rem 0;
 }
 .skillsSection .svg-slider img {
-  height: 75px;
+  height: 100px;
   margin: 0 3rem;
 }
 .skillsSection .svg-slider img:hover {
@@ -222,10 +299,60 @@ main {
 }
 
 footer {
-  background-image: url("../assets/footer-background.svg");
+  background-image: linear-gradient(to top, transparent, #0C0A09), url("../assets/footer-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 1004px;
-  margin: 0;
+  margin: auto;
+}
+footer .formDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 1180px;
+  margin: auto;
+  background-color: #1C1917;
+  padding: 3rem;
+  border-radius: 4px;
+}
+footer .formDiv #text {
+  width: 540px;
+}
+footer .formDiv #text h1 {
+  font-size: 48px;
+  line-height: 57px;
+}
+footer .formDiv #text p {
+  font-size: 20px;
+  color: #A8A29E;
+  line-height: 28px;
+}
+footer .formDiv input, footer .formDiv textarea {
+  margin: 1rem 0;
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  border: 1px solid #D6D3D1;
+  border-radius: 4px;
+}
+footer .formDiv textarea {
+  height: 240px;
+}
+footer .formDiv #contactForm {
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+}
+footer .formDiv button {
+  padding: 16px 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4F46E5;
+}
+footer .formDiv button:hover {
+  background-color: #7a73eb;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */
