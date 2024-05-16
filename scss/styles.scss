@@ -13,34 +13,6 @@ body {
     background-color: $blackColor;
   }
 
-  .loader {
-    transition: 0.3s cubic-bezier(1, 0.01, 0.29, 1.01);
-    background-color: #fa8072;
-    left: 0;
-    right: 100%;
-    position: absolute; 
-    height: 100vh;
-    z-index: 101;
-  }
-  
-  .loader i {
-    position: fixed;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    top: 50%;
-  color: #fff;
-  }
-
-  .loading:after {
-    background-color: #fff;
-    content: " ";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 100;
-  }
-
 header {
         background-image: linear-gradient(to bottom, transparent, #0C0A09), url('../assets/header-bg.svg'); 
         background-size: cover;
@@ -106,6 +78,7 @@ header {
             margin-bottom: 2rem;
         }
         a {
+            display: block;
             text-decoration: none;
             background-color: $purpleAccent;
             color: white;
@@ -145,7 +118,6 @@ header {
             animation-iteration-count: infinite;
             animation-timing-function: ease-in-out;
         }
-
         @keyframes floating {
             0% {
                 transform: translate(0, 0px);
@@ -160,12 +132,27 @@ header {
     }
 
     .aboutText {
-        h1, p, button {
+        h1, p, a {
             margin: 1rem 0;
         }
         h1 {
             line-height: 57px;
             font-size: 48px;
+        }
+        a {
+            text-decoration: none;
+            background-color: $purpleAccent;
+            color: white;
+            padding: 16px 24px;
+            width: 109px;
+            height: 60px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 2rem;
+        }
+        a:hover {
+            background-color: lighten($purpleAccent, 10%);
         }
     }
 }
@@ -221,6 +208,9 @@ main {
                 font-size: 16px;
             }
         }
+    }
+    .project:hover {
+        cursor: pointer;
     }
 }
 
