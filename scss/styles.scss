@@ -239,9 +239,9 @@ main {
   }
 
   @keyframes glowing {
-    0% { box-shadow: 0 0 10px #fff;}
-    50% { box-shadow: 0 0 20px $purpleAccent, 0 0 30px lighten($purpleAccent, 20%); }
-    100% { box-shadow: 0 0 10px #fff; }
+    0% { filter: drop-shadow(10px 7px 10px $purpleAccent); }
+    50% { filter: drop-shadow(10px 7px 10px $purpleAccent); }
+    100% { filter: drop-shadow(10px 7px 10px $purpleAccent); }
   }
 
 .skillsHeader {

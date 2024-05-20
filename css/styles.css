@@ -228,13 +228,13 @@ main {
 }
 @keyframes glowing {
   0% {
-    box-shadow: 0 0 10px #fff;
+    filter: drop-shadow(10px 7px 10px #4F46E5);
   }
   50% {
-    box-shadow: 0 0 20px #4F46E5, 0 0 30px #a49ff2;
+    filter: drop-shadow(10px 7px 10px #4F46E5);
   }
   100% {
-    box-shadow: 0 0 10px #fff;
+    filter: drop-shadow(10px 7px 10px #4F46E5);
   }
 }
 .skillsHeader {
